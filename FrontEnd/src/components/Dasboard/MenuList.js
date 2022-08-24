@@ -1,8 +1,13 @@
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Divider from "@mui/material/Divider";
+
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PeopleIcon from "@mui/icons-material/People";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import LandscapeIcon from "@mui/icons-material/Landscape";
@@ -40,4 +45,38 @@ const list = [
   },
 ];
 
-export default list;
+const Menu = ({ open }) => {
+  return (
+    <List component="nav">
+      {list.map((item) => {
+        const { icon, text, id } = item;
+        return (
+          <ListItem key={id} disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                {icon}
+              </ListItemIcon>
+              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        );
+      })}
+
+      <Divider sx={{ my: 1 }} />
+    </List>
+  );
+};
+
+export default Menu;
