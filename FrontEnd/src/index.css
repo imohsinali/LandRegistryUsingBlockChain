@@ -90,3 +90,21 @@ section > div {
 .menu-icon p {
   color: black;
 }
+
+.Land-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.Land-title {
+  position: absolute;
+}
+.myLand {
+  width: 100%;
+  min-height: 200px;
+  max-height: 350px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* text-transform: uppercase; */
+}
