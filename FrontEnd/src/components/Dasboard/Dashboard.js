@@ -9,15 +9,12 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import LandGallery from "./LandGallery";
 import Menu from "./MenuList";
-import landList from "./landDetailList";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -66,7 +63,7 @@ const Drawer = styled(MuiDrawer, {
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function DashboardContent({ props }) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -141,33 +138,13 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {landList.map((item, index) => (
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      flexWrap: "Wrap",
-
-                      minHeight: "300px",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <LandGallery key={index} {...item} />
-                  </Paper>
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
+          {props}
         </Box>
       </Box>
     </ThemeProvider>
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function Dashboard({ props }) {
+  return <DashboardContent props={props} />;
 }
