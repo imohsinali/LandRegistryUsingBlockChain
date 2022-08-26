@@ -108,3 +108,20 @@ section > div {
   /* background-size: cover; */
   /* text-transform: uppercase; */
 }
+
+.key-input {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  top: -50px;
+  left: 88%;
+  background-color: red;
+}
+
+.Meta-button {
+  background-color: orange;
+  margin-top: 10%;
+}
