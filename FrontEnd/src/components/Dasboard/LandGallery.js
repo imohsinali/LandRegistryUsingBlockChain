@@ -5,12 +5,15 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Title from "./Title";
 import landList from "./landDetailList";
+import { useLocation, useParams } from "react-router-dom";
 
 function preventDefault(event) {
   event.preventDefault();
 }
 
 export default function LandGallery() {
+  let { pathname } = useLocation();
+  console.log(pathname);
   return (
     <Container maxWidth="100%" sx={{ mt: 4, mb: 4 }}>
       <Grid container spacing={3}>
