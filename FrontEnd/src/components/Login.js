@@ -22,6 +22,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { orange } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -33,6 +34,19 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function Login() {
+  const navigate = useNavigate();
+  const login = () => {
+    localStorage.setItem("login", true);
+
+    navigate("/");
+  };
+  React.useEffect(() => {
+    let login = localStorage.getItem("login");
+    if (login) {
+      navigate("/");
+    }
+  }, []);
+  console.log(navigate);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -113,7 +127,7 @@ export default function Login() {
               </Grid>
             </Grid>
             <Button
-              type="submit"
+              // type="submit"
               fullWidth
               variant="contained"
               sx={{ mb: 2, height: "50px" }}
@@ -142,6 +156,7 @@ export default function Login() {
             </ColorButton>
           </Box>
         </Box>
+        <button onClick={login}>Click</button>
       </Container>
     </ThemeProvider>
   );
