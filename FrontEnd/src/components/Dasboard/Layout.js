@@ -15,6 +15,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import LandGallery from "./LandGallery";
 import Menu from "./MenuList";
+import { useLocation } from "react-router-dom";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -63,11 +64,16 @@ const Drawer = styled(MuiDrawer, {
 
 const mdTheme = createTheme();
 
-const Layout = ({ co, title }) => {
+const Layout = ({ co }) => {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  let { pathname } = useLocation();
+  let title = pathname.substring(1).toUpperCase();
+  if (title.length == 0) {
+    title = "Dashboard";
+  }
 
   return (
     <ThemeProvider theme={mdTheme}>
