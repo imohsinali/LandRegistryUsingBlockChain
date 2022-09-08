@@ -12,7 +12,9 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import LandscapeIcon from "@mui/icons-material/Landscape";
 import { Link } from "react-router-dom";
-
+const logout = () => {
+  localStorage.clear();
+};
 const list = [
   {
     id: 0,
@@ -33,7 +35,7 @@ const list = [
 
     icon: <LandscapeIcon />,
     text: "My Land",
-    path: "/",
+    path: "/myLand",
   },
   {
     id: 3,
@@ -47,7 +49,7 @@ const list = [
 
     icon: <LogoutIcon />,
     text: "logout",
-    path: "/",
+    path: "/login",
   },
 ];
 
@@ -64,7 +66,12 @@ const Menu = ({ open }) => {
               color: "inherit",
             }}
           >
-            <ListItem key={id} disablePadding sx={{ display: "block" }}>
+            <ListItem
+              key={id}
+              onClick={id == 4 ? logout : ""}
+              disablePadding
+              sx={{ display: "block" }}
+            >
               <ListItemButton
                 sx={{
                   minHeight: 48,
