@@ -125,3 +125,40 @@ section > div {
   background-color: orange;
   margin-top: 10%;
 }
+
+.home-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 20px;
+}
+
+ul{
+  list-style: none;
+}
+.home-nav ul{
+  flex: 0.4;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.home-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+
+}
+
+.home-section div{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
