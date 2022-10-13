@@ -11,13 +11,6 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import FilledInput from "@mui/material/FilledInput";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { orange } from "@mui/material/colors";
@@ -38,12 +31,12 @@ export default function Login() {
   const login = () => {
     localStorage.setItem("login", true);
 
-    navigate("/");
+    navigate("/dashboard");
   };
   React.useEffect(() => {
     let login = localStorage.getItem("login");
     if (login) {
-      navigate("/");
+      navigate("/dashboard");
     }
   }, []);
   console.log(navigate);
@@ -127,7 +120,7 @@ export default function Login() {
               </Grid>
             </Grid>
             <Button
-              // type="submit"
+              onClick={login}
               fullWidth
               variant="contained"
               sx={{ mb: 2, height: "50px" }}
@@ -147,7 +140,7 @@ export default function Login() {
             </Typography>
 
             <ColorButton
-              type="submit"
+              onClick={login}
               fullWidth
               variant="contained"
               sx={{ mb: 2, height: "50px" }}
@@ -156,7 +149,6 @@ export default function Login() {
             </ColorButton>
           </Box>
         </Box>
-        <button onClick={login}>Click</button>
       </Container>
     </ThemeProvider>
   );
