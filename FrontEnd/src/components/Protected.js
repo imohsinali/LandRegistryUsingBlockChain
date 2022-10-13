@@ -16,19 +16,19 @@ const Protected = ({ Component }) => {
 //   const login = () => {
 //     localStorage.getItem("login", true);
 //     navigate("/");
-//   };
-//   React.useEffect(() => {
-//     let login = localStorage.getItem("login");
-//     if (login) {
-//       navigate("/");
-//     }
-//   });
-//   return (
-//     <>
-//       <h1>Login page</h1>
-//       <button onClick={login}>Login</button>
-//     </>
-//   );
-// }
+  };
+  React.useEffect(() => {
+    let login = localStorage.getItem("login");
+    if (login) {
+      navigate("/");
+    }
+  });
+  return (
+    <>
+      <h1>Login page</h1>
+      <button onClick={login}>Login</button>
+    </>
+  );
+}
 
 export default Protected;
