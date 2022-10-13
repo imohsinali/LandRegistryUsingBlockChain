@@ -20,7 +20,7 @@ const list = [
     id: 0,
     icon: <DashboardIcon />,
     text: "Dashboard",
-    path: "/",
+    path: "/dashboard",
   },
   {
     id: 1,
@@ -49,7 +49,7 @@ const list = [
 
     icon: <LogoutIcon />,
     text: "logout",
-    path: "/login",
+    path: "/",
   },
 ];
 
