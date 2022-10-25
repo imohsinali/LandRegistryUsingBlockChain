@@ -131,7 +131,7 @@ section > div {
   justify-content: space-between;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-padding: 20px;
+  padding: 20px;
 }
 
 ul{
@@ -154,11 +154,56 @@ ul{
 }
 
 .home-section div{
-  height: 200px;
+  min-height: 100px;
+
+  width: 200px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 
 }
 
+
+.table{
+  margin-top: 3px;
+  height: 80vh;
+}
+
+
+.table:first-child{
+  overflow-y: hidden !important;
+  background-color: red !important;
+}
+
+
+.btn{
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  transition: transform .2s; /* Animation */
+  opacity: 0.6;
+  transition: 0.3s;
+  border: none;
+}
+.verify-button{
+  background-color: rgb(84, 84, 247);
+  
+}
+.remove-button{
+  background-color: red;
+}
+.btn:hover{
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.home{
+  /* display: none; */
+}

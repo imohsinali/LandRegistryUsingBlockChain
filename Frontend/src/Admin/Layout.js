@@ -13,9 +13,9 @@ import Badge from "@mui/material/Badge";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import LandGallery from "./LandGallery";
 import Menu from "./MenuList";
 import { useLocation } from "react-router-dom";
+import { Avatar } from "@mui/material";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -99,18 +99,28 @@ const Layout = ({ co }) => {
             </IconButton>
             <Typography
               component="h1"
-              variant="h6"
+              variant="h4"
               color="inherit"
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              {title}
+              Admin
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Typography
+              component="h1"
+              variant="h6"
+              color="inherit"
+              noWrap
+              sx={{ flexGrow: 0.01 }}
+            >
+              <Typography>
+                0x2903a4d3.....32da
+              </Typography>
+              Admin
+            </Typography>
+            <Avatar>
+              Ad
+            </Avatar>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>

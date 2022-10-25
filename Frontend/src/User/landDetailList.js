@@ -1,6 +1,6 @@
-import land1 from "../../images/land1.jpg";
-import land2 from "../../images/land2.jpg";
-import land3 from "../../images/falcon-9.webp";
+import land1 from "../images/land1.jpg";
+import land2 from "../images/land2.jpg";
+import land3 from "../images/falcon-9.webp";
 
 const landList = [
   {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from "./Dasboard/Layout";
+import Layout from "./Layout";
 const Protected = ({ Component }) => {
   const navigate = useNavigate();
   useEffect(() => {

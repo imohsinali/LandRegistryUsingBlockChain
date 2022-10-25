@@ -1,33 +1,36 @@
-import Registration from "./Registration";
 import Login from "./Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
-import LandGallery from "./LandGallery";
 import Protected from "./Protected";
 import Home from "../Home";
-function User() {
+import AddLandInspector from "./AddLandInspector";
+import AllLandInspector from "./AllLandInspector";
+
+function Admin() {
   const login =localStorage.getItem("login")
   // let login= false
   
   return (
     <Router>
       <Routes>
-       <Route  path="/" element={<Home />} />
+       {/* <Route  path="/" element={<Home />} /> */}
       
-     <Route path="login" element={<Login />} />
+     <Route path="/" element={<Login />} />
       <Route path="dashboard" element={<Protected Component={Dashboard} />} />
+      
       <Route
-        path="reg"
-        element={<Protected Component={Registration} />}
+        path="alllandinspector" element={<Protected Component={AllLandInspector} />}
+
       />
       <Route
-        path="landgallery"
-        element={<Protected Component={LandGallery} />}
+        path="addlandinspector"
+        element={<Protected Component={AddLandInspector} />}
       />
+      
     </Routes>
       
     </Router>
   );
 }
 
-export default User;
+export default Admin;

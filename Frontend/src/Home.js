@@ -1,28 +1,33 @@
-import React from "react";
+import { Button } from "@mui/material";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import admin from './images/Admin.png'
 import inspector from './images/inspector.png'
-import user from './images/user.png'
+import User from './images/user.png'
 
 const Home = () => {
+  const [path,setPath]=useState('')
+   
+
   return (
+    
     <div>
       <nav className="home-nav">
       <h1>Land Registry</h1>
       <ul>
         <li>
-          <Link to={'login'}>
-            Admin
+          <Link to={'login'} onClick={()=>localStorage.setItem('path','Admin')} style={{ textDecoration: 'none' }}>
+            <Button>Admin</Button>
           </Link>
         </li>
         <li>
-        <Link to={'login'}>
-            Inspector
+        <Link to={'/login'} onClick={()=>localStorage.setItem('path',"Inspector")} style={{ textDecoration: 'none' }}>
+            <Button>Inspector</Button>
           </Link>
         </li>
         <li>
-        <Link to={'login'}>
-            User
+        <Link to={'login'} onClick={()=>localStorage.setItem('path',"User")} style={{ textDecoration: 'none' }}>
+            <Button>User</Button>
           </Link>
         </li>
       </ul>
@@ -35,7 +40,7 @@ const Home = () => {
         <div><img src={inspector}/>
         <h3>Inspector</h3>
         </div>
-        <div><img src={user}/>
+        <div><img src={User}/>
         <h3>User</h3>
         </div>
 

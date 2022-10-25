@@ -1,20 +1,20 @@
-import Registration from "./components/Registration";
-import Login from "./components/Login";
+import Registration from "./Registration";
+import Login from "./Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dasboard/Dashboard";
-import LandGallery from "./components/Dasboard/LandGallery";
-import Protected from "./components/Protected";
-import Home from "./Home";
-function App() {
+import Dashboard from "./Dashboard";
+import LandGallery from "./LandGallery";
+import Protected from "./Protected";
+import Home from "../Home";
+function User() {
   const login =localStorage.getItem("login")
   // let login= false
   
   return (
     <Router>
       <Routes>
-       <Route  path="/" element={<Home />} />
+       {/* <Route  path="/" element={<Home />} /> */}
       
-       <Route path="login" element={<Login />} />
+     <Route path="/" element={<Login />} />
       <Route path="dashboard" element={<Protected Component={Dashboard} />} />
       <Route
         path="profile"
@@ -24,10 +24,15 @@ function App() {
         path="landgallery"
         element={<Protected Component={LandGallery} />}
       />
+      <Route
+        path="myLand"
+        element={<Protected Component={LandGallery} />}
+      />
+
     </Routes>
       
     </Router>
   );
 }
 
-export default App;
+export default User;

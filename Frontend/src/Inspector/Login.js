@@ -34,12 +34,14 @@ export default function Login() {
     navigate("/dashboard");
   };
   React.useEffect(() => {
+    // window.location.reload()
+
     let login = localStorage.getItem("login");
     if (login) {
       navigate("/dashboard");
     }
-  }, []);
-  console.log(navigate);
+  });
+  console.log(localStorage.getItem("path"));
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -74,6 +76,7 @@ export default function Login() {
 
   return (
     <ThemeProvider theme={theme}>
+      
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
