@@ -9,15 +9,17 @@ import Home from "../Home";
 import TransferOwnership from "./TransferOwnership";
 
 function Inspector() {
-  const login =localStorage.getItem("login")
+  // const login =localStorage.getItem("login")
   // let login= false
   
   return (
-    <Router>
-      <Routes>
-       {/* <Route  path="/" element={<Home />} /> */}
+    <div>
+
+        <Login/>
+      {/* <Routes>
+        <Route  path="/" element={<Home />} />
       
-     <Route path="/" element={<Login />} />
+     <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Protected Component={Dashboard} />} />
       
       <Route
@@ -32,9 +34,9 @@ function Inspector() {
         path="transferownership"
         element={<Protected Component={TransferOwnership} />}
       />
-    </Routes>
+    </Routes>  */}
       
-    </Router>
+    </div>
   );
 }
 

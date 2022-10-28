@@ -22,5 +22,7 @@ const data=[
     // more records...
   ]
 
+  console.log('hello')
+
 
   export default data

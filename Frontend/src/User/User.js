@@ -12,9 +12,9 @@ function User() {
   return (
     <Router>
       <Routes>
-       {/* <Route  path="/" element={<Home />} /> */}
+       <Route  path="/" element={<Home />} />
       
-     <Route path="/" element={<Login />} />
+     <Route path="/login" element={<Login />} />
       <Route path="dashboard" element={<Protected Component={Dashboard} />} />
       <Route
         path="profile"

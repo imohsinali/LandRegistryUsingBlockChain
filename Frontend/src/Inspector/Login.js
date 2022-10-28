@@ -29,18 +29,18 @@ const ColorButton = styled(Button)(({ theme }) => ({
 export default function Login() {
   const navigate = useNavigate();
   const login = () => {
-    localStorage.setItem("login", true);
+    localStorage.setItem("Inspectorlogin", true);
 
-    navigate("/dashboard");
+    navigate("/Inspector-dashboard");
   };
-  React.useEffect(() => {
-    // window.location.reload()
+  // React.useEffect(() => {
+  //   // window.location.reload()
 
-    let login = localStorage.getItem("login");
-    if (login) {
-      navigate("/dashboard");
-    }
-  });
+  //   let login = localStorage.getItem("login");
+  //   if (login) {
+  //     navigate("Inpsector/dashboard");
+  //   }
+  // });
   console.log(localStorage.getItem("path"));
   const handleSubmit = (event) => {
     event.preventDefault();

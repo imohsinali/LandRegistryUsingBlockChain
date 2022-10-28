@@ -1,32 +1,71 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { css } from "glamor";
 
 const theme = createTheme();
 
 export default function AddLandInspector() {
+  let toastId = null;
+
+  function notify(fname,cname) {
+    if (!toast.isActive(toastId)) {
+      console.log("Displaying Toast");
+      toastId = toast(fname, {
+        closeOnClick: true,
+        toastId: "my_toast",
+        autoClose: true,
+        closeButton: false,
+        position: toast.POSITION.BOTTOM_RIGHT,
+        className:cname
+      });
+    } else {
+      console.log("Toast already active");
+    }
+  }
+  
   const handleSubmit = (event) => {
+  
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      address: data.get("address"),
-      city:data.get("city"),
-      name:data.get("name"),
-      age:data.get("age"),
-      cnic:data.get('cnic')
-
-
-    });
+    if( data.get("email") &&
+    data.get("address")&&
+    data.get("city")&&
+     data.get("name")&&
+     data.get("age")&&
+     data.get('cnic'))
+    {
+      let fname="Form Submit Successfully!"
+      let cname="toast-success-container"
+      notify(fname, cname)
+      
+      console.log({
+        email: data.get("email"),
+        address: data.get("address"),
+        city:data.get("city"),
+        name:data.get("name"),
+        age:data.get("age"),
+        cnic:data.get('cnic')
+     
+  
+      });
+    }
+    else{
+       
+      let fname="Form is not Complete!"
+      let cname="toast-danger-container"
+      notify(fname, cname)
+    }
+    
+    
   };
 
   return (
@@ -129,13 +168,22 @@ export default function AddLandInspector() {
               fullWidth
               variant="contained"
               sx={{ mt: 1, mb: 2 }}
+            
             >
               Submit
             </Button>
+            <div>
+            <ToastContainer />
+      
+      
+          </div>
           </Box>
         </Box>
       </Container>
     </ThemeProvider>
   );
 }
+
+
+
 

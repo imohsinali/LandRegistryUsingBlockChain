@@ -1,17 +1,13 @@
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
-
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import PeopleIcon from "@mui/icons-material/People";
-import TerrainIcon from '@mui/icons-material/Terrain';
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
-import VerifiedUser from "@mui/icons-material/VerifiedUser";
 import People from "@mui/icons-material/People";
 const logout = () => {
   localStorage.clear();

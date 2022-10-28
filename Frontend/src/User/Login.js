@@ -27,23 +27,21 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function Login() {
-  const refreshPage = ()=>{
-    window.location.reload();
- }
 
   const navigate = useNavigate();
   const login = () => {
     localStorage.setItem("login", true);
 
-    navigate("/dashboard");
+    navigate("/user-dashboard");
   };
-  React.useEffect(() => {
-    // window.location.reload()
-    let login = localStorage.getItem("login");
-    if (login) {
-      navigate("/dashboard");
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   // window.location.reload()
+  //   let login = localStorage.getItem("login");
+  //   // refreshPage()
+  //   if (login) {
+  //     navigate("/dashboard");
+  //   }
+  // }, );
 
   console.log(localStorage.getItem("path"));
   
@@ -79,6 +77,8 @@ export default function Login() {
     event.preventDefault();
   };
 
+  
+  
   return (
     <ThemeProvider theme={theme}>
       
@@ -148,7 +148,7 @@ export default function Login() {
             </Typography>
 
             <ColorButton
-              onClick={()=>{login(); refreshPage()}}
+              onClick={login}
               fullWidth
               variant="contained"
               sx={{ mb: 2, height: "50px" }}

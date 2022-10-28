@@ -20,7 +20,7 @@ const list = [
     id: 0,
     icon: <DashboardIcon />,
     text: "Dashboard",
-    path: "/dashboard",
+    path: "/Inspector-dashboard",
   },
   {
     id: 1,

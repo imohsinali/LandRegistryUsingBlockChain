@@ -29,18 +29,11 @@ const ColorButton = styled(Button)(({ theme }) => ({
 export default function Login() {
   const navigate = useNavigate();
   const login = () => {
-    localStorage.setItem("login", true);
+    localStorage.setItem("Adminlogin", true);
 
     navigate("/dashboard");
   };
-  React.useEffect(() => {
-    // window.location.reload()
-
-    let login = localStorage.getItem("login");
-    if (login) {
-      navigate("/dashboard");
-    }
-  }, []);
+  
   console.log(localStorage.getItem("path"));
   
   const handleSubmit = (event) => {
@@ -59,6 +52,9 @@ export default function Login() {
     weightRange: "",
     showPassword: false,
   });
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -75,6 +71,15 @@ export default function Login() {
     event.preventDefault();
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  
+  
+    <div>
+      <button onClick={refreshPage}>Click to reload!</button>
+    </div>
   return (
     <ThemeProvider theme={theme}>
       
@@ -144,7 +149,7 @@ export default function Login() {
             </Typography>
 
             <ColorButton
-              onClick={login}
+              onClick={refreshPage}
               fullWidth
               variant="contained"
               sx={{ mb: 2, height: "50px" }}
@@ -153,6 +158,7 @@ export default function Login() {
             </ColorButton>
           </Box>
         </Box>
+
       </Container>
     </ThemeProvider>
   );
